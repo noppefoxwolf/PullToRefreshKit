@@ -261,7 +261,7 @@ open class RefreshHeaderContainer:UIView{
                     if fireHeight == nil{
                         fireHeight = self.delegate?.heightForHeader()
                     }
-                    let offSetY = self.attachedScrollView.contentOffset.y
+                    let offSetY = self.attachedScrollView.contentOffset.y + 88.0 //ASTableNode使う時の謎offset
                     let topShowOffsetY = -1.0 * self.originalInset!.top
                     let normal2pullingOffsetY = topShowOffsetY - fireHeight
                     let currentOffset = self.attachedScrollView.contentOffset
@@ -353,7 +353,7 @@ open class RefreshHeaderContainer:UIView{
         }
         
         originalInset =  attachedScrollView.contentInset
-        let offSetY = attachedScrollView.contentOffset.y
+        let offSetY = attachedScrollView.contentOffset.y + 88.0 //ASTableNode使う時の謎offset
         let topShowOffsetY = -1.0 * originalInset!.top
         guard offSetY <= topShowOffsetY else{
             return
